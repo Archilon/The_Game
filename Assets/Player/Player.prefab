@@ -1899,8 +1899,8 @@ MonoBehaviour:
   GameOverScreen: {fileID: 0}
   healthBar: {fileID: 0}
   speed: 0
-  basicSpeed: 2.5
-  sprintSpeed: 3.5
+  basicSpeed: 3
+  sprintSpeed: 4.5
   jumpStrength: 350
   maxjumps: 2
   jumps: 0

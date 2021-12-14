@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour
 
         if (alive)
         {
+            healthBar.value = health;
             if (health > maxHealth)
             {
                 health = maxHealth;
@@ -73,8 +74,8 @@ public class PlayerController : MonoBehaviour
 
             
 
-            if (Input.GetKey(KeyCode.Delete))
-            { alive = false; }
+            /*if (Input.GetKey(KeyCode.Delete))
+            { alive = false; }*/
 
             if (Input.GetKey(KeyCode.LeftShift))
             { speed = sprintSpeed + pickup.bonusSpeed; }
@@ -96,7 +97,10 @@ public class PlayerController : MonoBehaviour
             //making so that moving sideways is not possible while airborne
             transform.Translate(Vector3.right * speed * Time.deltaTime * horizontalInput);
 
-
+            if(Input.GetKey(KeyCode.R))
+            {
+                resetMovement();
+            }
 
 
             //jump with maxjump increase possible, and ground check boolean
@@ -133,6 +137,11 @@ public class PlayerController : MonoBehaviour
 
 
         #endregion
+    }
+    void resetMovement()
+    {
+    basicSpeed = 3;
+    sprintSpeed = 5;
     }
     IEnumerator Death()
     {
@@ -201,7 +210,7 @@ public class PlayerController : MonoBehaviour
     {
         health = health - damageAmount;
         Debug.Log("took damage");
-        healthBar.value = health;
+        
     }
 
 }

@@ -20,9 +20,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Scene currentScene = SceneManager.GetActiveScene();
+        //Scene currentScene = SceneManager.GetActiveScene();
 
-        sceneName = currentScene.name;
+        //sceneName = currentScene.name;
 
         CollectedItems = 00;
         endBool = true;
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
 
         if(endBool == true && CollectedItems < 10)
         {
-            //PickUpScore.SetActive(true);
+            PickUpScore.SetActive(true);
             challenge.SetActive(false);
         }else if(endBool == true && CollectedItems >= 10)
         {
