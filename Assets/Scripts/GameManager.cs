@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
 
         if(endBool == true && CollectedItems < 10)
         {
-            PickUpScore.SetActive(true);
+            //PickUpScore.SetActive(true);
             challenge.SetActive(false);
         }else if(endBool == true && CollectedItems >= 10)
         {
